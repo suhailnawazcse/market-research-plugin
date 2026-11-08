@@ -1,0 +1,10 @@
+{
+  "name": "market-research",
+  "version": "0.1.0",
+  "description": "Market research and business intelligence skills for Claude: market sizing (TAM/SAM/SOM), competitor intelligence, opportunity scoring, and cited research reports.",
+  "author": {
+    "name": "resuhailnawaz"
+  },
+  "license": "MIT",
+  "keywords": ["market-research", "competitor-analysis", "business-intelligence", "market-sizing", "startup", "reports"]
+}

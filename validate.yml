@@ -1,0 +1,24 @@
+name: Validate plugin
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate plugin.json
+        run: python3 -m json.tool .claude-plugin/plugin.json > /dev/null
+
+      - name: Check every skill has frontmatter with name and description
+        run: |
+          status=0
+          for f in skills/*/SKILL.md; do
+            head -1 "$f" | grep -q '^---$' || { echo "Missing frontmatter: $f"; status=1; }
+            grep -q '^name: ' "$f" || { echo "Missing name: $f"; status=1; }
+            grep -q '^description: ' "$f" || { echo "Missing description: $f"; status=1; }
+          done
+          exit $status

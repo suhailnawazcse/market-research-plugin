@@ -1,0 +1,7 @@
+# Default owner for everything in the repository
+*                       @resuhailnawaz
+
+# Skills and manifest need owner review
+/skills/                @resuhailnawaz
+/.claude-plugin/        @resuhailnawaz
+/.github/workflows/     @resuhailnawaz
